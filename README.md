@@ -1,24 +1,12 @@
-# careerlift-project
+Fakultet Informatike u Puli	(fipu.unipu.hr)
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Kolegij:	Programsko inženjerstvo (ntankovic.unipu.hr/pi)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Mentori:	doc. dr. sc. Nikola Tanković (ntankovic.unipu.hr)
+			Toni Starčić, univ. bacc. inf.
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Naziv aplikacije:	CareerLift 
+
+Sastav tima:		Darjan Juranović (0303014123)
