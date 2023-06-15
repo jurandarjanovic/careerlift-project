@@ -2,10 +2,12 @@
 <img class="logo1" src="../assets/logo1.png" title="CareerLift">
 <h1>Registracija</h1>
 <div class="registracija">
-    <input type="text" v-model="name" placeholder="Unesite ime" />
-    <input type="email" v-model="email" placeholder="Unesite email" />
-    <input type="password" v-model="password" placeholder="Unesite lozinku" />
+    <form>
+    <input type="text" v-model="username" placeholder="Unesite korisničko ime" autocomplete="username" />
+    <input type="email" v-model="email" placeholder="Unesite email" autocomplete="email" />
+    <input type="password" v-model="password" placeholder="Unesite lozinku" autocomplete="current-password" />
     <button v-on:click="signUp"> Registriraj se </button>
+    </form>
 </div>
 </template>
 <script>
@@ -15,24 +17,25 @@ export default {
     data()
     {
         return {
-            name:'',
+            username:'',
             email:'',
             password:''
         }
     },
     methods:{
-        async signUp()
+        async signUp() //asinkrona funkcija za slanje POST zahtjeva
         {
-            let result = await axios.post("http://localhost:3000/korisnici",{
+            let result = await axios.post("http://localhost:3000/korisnici", //varijabla u koju se sprema zahtjev
+            {
                email:this.email,
                password:this.password,
-               name:this.name
+               username:this.username
             });
 
             console.warn(result);
             if(result.status==201)
             {
-                alert("sign-up done");
+                alert("Registracija uspjesna");
                 localStorage.setItem("user-info",JSON.stringify(result.data))
             }
         }
